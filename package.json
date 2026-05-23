@@ -1,0 +1,25 @@
+{
+  "name": "discord-time",
+  "version": "1.0.0",
+  "bin": "index.js",
+  "main": "main.js",
+  "scripts": {
+    "start": "node index.js",
+    "gui": "electron .",
+    "build-exe": "pkg . --targets node18-win-x64 --output dist/discord.exe",
+    "package-gui": "electron-packager . discord-time --overwrite --platform=win32 --arch=x64 --out=dist-gui"
+  },
+  "dependencies": {
+    "figlet": "1.5.2",
+    "chalk": "4.1.2",
+    "boxen": "4.2.0"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-packager": "^17.1.0"
+  },
+  "pkg": {
+    "assets": [],
+    "scripts": []
+  }
+}

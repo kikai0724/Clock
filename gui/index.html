@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clock</title>
+  <style>
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;background:transparent;color:#e6eef8;overflow:hidden}
+    :root{--accent:#7ee7ff;--accent-2:#9b7bff}
+    .bg-canvas{position:fixed;inset:0;z-index:0}
+    .wrap{height:100%;display:flex;align-items:center;justify-content:center;position:relative;z-index:2}
+    .card{background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));backdrop-filter: blur(8px);padding:28px;border-radius:14px;box-shadow:0 12px 40px rgba(2,6,23,0.6);text-align:center;min-width:520px;border:1px solid rgba(255,255,255,0.06);-webkit-app-region:drag;cursor:grab}
+    .btn, .close{-webkit-app-region:no-drag}
+    .time{font-size:72px;font-weight:800;letter-spacing:6px;margin:0;color:var(--accent);text-shadow:0 8px 30px rgba(126,231,255,0.08);transform-origin:center;transition:transform 220ms cubic-bezier(.2,.8,.2,1)}
+    .time .digit{display:inline-block;min-width:36px}
+    .date{font-size:14px;color:#c9e7ff;margin-top:8px}
+    .small{font-size:12px;color:#9fbfdc;margin-top:10px;cursor:pointer;-webkit-app-region:no-drag}
+    .small:hover{color:#7ee7ff}
+    .controls{display:flex;gap:8px;justify-content:center;margin-top:12px}
+    .btn{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);padding:6px 10px;border-radius:8px;color:#dceffd;cursor:pointer;font-size:12px}
+    .btn.on{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#06111a}
+    .close{position:absolute;right:12px;top:8px;width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,0.25);backdrop-filter:blur(4px);z-index:3}
+    .close:hover{background:rgba(255,80,80,0.12)}
+    @keyframes pulse {
+      0%{filter:blur(0px)}
+      50%{filter:blur(4px)}
+      100%{filter:blur(0px)}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div id="time" class="time">00:00:00</div>
+      <div id="date" class="date">--</div>
+      <div id="author" class="small">Made by kikai_.</div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
