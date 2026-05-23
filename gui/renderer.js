@@ -12,6 +12,6 @@ setInterval(update,1000);
 
 document.getElementById('author').addEventListener('click', () => {
   if (window.electron && window.electron.openExternal) {
-    window.electron.openExternal('https://guns.lol/kikai');
+    window.electron.openExternal('https://github.com/kikai0724/Clock');
   }
 });
