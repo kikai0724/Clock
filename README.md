@@ -1,4 +1,6 @@
-# time
+# discord-time
+
+This small project displays the current time in the console every second with a stylized output.
 
 Quick start
 
